@@ -113,7 +113,7 @@ Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Enabling User-Centered Pr
 
 Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Mapping Risk Assessment Strategy for COVID-19 Mobile Apps' Vulnerabilities"* Intelligent Computing 2022.
 
-#<ins> Specialized Coursework
+## <ins> Specialized Coursework
 Undergraduate: 
 - Advanced Computer Security
 - Information Assurance
