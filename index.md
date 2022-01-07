@@ -109,7 +109,7 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
 
 [PDF](files/DeepFake.pdf)
 ## <ins>Publications
-Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Enabling User-Centered Privacy Controls for Mobile Applications: A COVID19 Perspective."* ACM's Transactions on Internet Technologies (TOIT), 2020. [PDF]()
+Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Enabling User-Centered Privacy Controls for Mobile Applications: A COVID19 Perspective."* ACM's Transactions on Internet Technologies (TOIT), 2020. [PDF](files/user-centered-privacy.pdf)
 
 Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Mapping Risk Assessment Strategy for COVID-19 Mobile Apps' Vulnerabilities"* Intelligent Computing 2022.
 
