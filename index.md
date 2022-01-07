@@ -20,9 +20,11 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
    - (3.96/4.00)
  - Bachelor's in Comptuer Science 
    - University of Illinois at Urbana-Champaign - May 2021
+   - High Honors
    - (3.91/4.00)
  - Associate's in Engineering Science
    - Parkland Community College - May 2021 
+   - Honors
    - (3.95/4.00)
 
 ## <ins>Skills
