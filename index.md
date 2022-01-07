@@ -14,7 +14,7 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
 
 
 
-# <ins>Education
+## <ins>Education
  - Master's in Computer Science - University of Illinois at Urbana-Champaign - May 2021
    - (3.96/4.00)
  - Bachelor's in Comptuer Science - University of Illinois at Urbana-Champaign - May 2021
@@ -22,7 +22,7 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
  - Associate's in Engineering Science - Parkland Community College - May 2021 
    - (3.95/4.00)
 
-# <ins>Skills
+## <ins>Skills
  - Programing Languages (In Order of Competence):
    - Python, C, and C++
    - Java and JavaScript
@@ -54,7 +54,8 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
   - Docker
   - Git and GitHub
   - Fiddler
-# <ins>Academic Experiences
+  
+## <ins>Academic Experiences
 
 ### Graduate Research Assistant
 ##### *The George Washington University* - *June 2021 - Present*
@@ -77,7 +78,7 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
  - Rewrote and redesigned weekly lab modules relating to developing technical security and information assurance skills in order to make assignments more succinct and comprehensive in order to help students develop technical skills
  - Assisted students with conceptual questions regarding course content
 
-# Professional Experiences
+## <ins> Professional Experiences
 ### Safer Illinois Security Review Team
 ##### *Sandia National Laboratories + Illinois Applied Research Institute* - *May 2019 - August 2019*
 - Worked in a team of five to create neural network architectures for classifying time-series and video data in order to surpass older, deterministic classifiers
@@ -88,7 +89,7 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
 - Designed educational programming and materials for middle-school aged youth in the areas of robotics, hardware prototyping, and computer programming
 - Implemented a QR code checkout system for state-wide robotics and drone equipment loan programs
 
-# <ins>Projects of Interest
+## <ins>Projects of Interest
 ### Twitter Bots and Misinformation Within The 2020 Presidential Election
 ##### *University of Illinois at Urbana-Champaign - August 2020 - December 2020*
 - Explored automated classification of misinformation tweets through Word2Vec distance metrics from Snopes and PolitiFact articles
@@ -104,7 +105,7 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
 - Explored the effects of loss functions on other image translation task, such as Pix2Pix (Facade) and CycleGAN (Horse2Zebra)
 
 [PDF](files/DeepFake.pdf)
-# <ins>Publications
+## <ins>Publications
 Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Enabling User-Centered Privacy Controls for Mobile Applications: A COVID19 Perspective."* ACM's Transactions on Internet Technologies (TOIT), 2020. [PDF]()
 
 Tanusree Sharma, **Hunter A. Dyer**, Masooda Bashir. *"Mapping Risk Assessment Strategy for COVID-19 Mobile Apps' Vulnerabilities"* Intelligent Computing 2022.
@@ -122,5 +123,7 @@ Graduate:
 - Machine Learning for Security
 - Adversarial Machine Learning
 - IOT Security
-#<ins> Academic Distinctions
+
+
+## <ins> Academic Distinctions
 CyberCorp's Scholarship for Service Recipient - *August 2019 - May 2021*
