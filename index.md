@@ -8,7 +8,7 @@ title: Home
 I am currently a first year Ph.D. student at The George Washington University in the [GWUSEC lab](https://gwusec.seas.gwu.edu/). 
 My research interests lie primarily within the areas of Mobile Security, Cyber Crime, and the intersection of Machine Learning with security. In time outside of research, I enjoy expanding my skills within the areas of Open Source Intelligence (OSINT), reverse engineering, and malware analysis.
 
-I graduated with my Master's  and Bachelor's degree  in Computer Science from the University of Illinois at Urbana-Champaign (UIUC) in May 2021. While at UIUC, I had the opportunity to partake in the Cybercorps Scholarship for Service. Through my coursework, I gained technical skills relating to binary exploitation, network exploitation, web application exploitation, and digital forensics. I also had the opportunity to learn how machine learning can be utilized for various domains in Cyber Security and learned about adversarial machine learning.
+I graduated with my Master's  and Bachelor's degree  in Computer Science from the University of Illinois at Urbana-Champaign (UIUC) in May 2021. While at UIUC, I had the opportunity to partake in the Cybercorp's Scholarship for Service. Through my coursework, I gained technical skills relating to binary exploitation, network exploitation, web application exploitation, and digital forensics. I also had the opportunity to learn how machine learning can be utilized for various domains in Cyber Security and learned about adversarial machine learning.
 
 A PDF version of my CV can be found [here](files/CV_January22.pdf)
 
@@ -104,8 +104,8 @@ A PDF version of my CV can be found [here](files/CV_January22.pdf)
 
  [Magnitude of Bot Usage on Twitter](files/SocialBotUsage.pdf)
 
-### Utilizing Adversaril Machine Learning Against DeepFakes
-##### *University of Illinois at Urbana-CHampaign - August 2020 - December 2020*
+### Utilizing Adversarial Machine Learning Against DeepFakes
+##### *University of Illinois at Urbana-Champaign - August 2020 - December 2020*
 - Utilized AdvGAN with various loss functions to generate protective adversarial noise in order to combat against AutoEncoder DeepFakes
 - Explored the effects of loss functions on other image translation task, such as Pix2Pix (Facade) and CycleGAN (Horse2Zebra)
 
