@@ -10,22 +10,20 @@ My research interests lie primarily within the areas of Mobile Security, Cyber C
 
 I graduated with my Master's  and Bachelor's degree  in Computer Science from the University of Illinois at Urbana-Champaign (UIUC) in May 2021. While at UIUC, I had the opportunity to partake in the Cybercorp's Scholarship for Service. Through my coursework, I gained technical skills relating to binary exploitation, network exploitation, web application exploitation, and digital forensics. I also had the opportunity to learn how machine learning can be utilized for various domains in Cyber Security and learned about adversarial machine learning.
 
-A PDF version of my CV can be found [here](files/CV_January22.pdf)
+
+Previously, I enjoyed working with the folks at The George Washington University in the [GWUSEC lab](https://gwusec.seas.gwu.edu/) for the 2021-2022 academic year.
+
+A PDF version of my CV can be found [here](files/CV_January22.pdf) (Last upadated 1-2022)
 
 
 
 ## <ins>Education
  - Master's in Computer Science
-   - University of Illinois at Urbana-Champaign - May 2021
-   - (3.96/4.00)
+   - University of Illinois at Urbana-Champaign - May 2021 - (3.96/4.00)
  - Bachelor's in Comptuer Science 
-   - University of Illinois at Urbana-Champaign - May 2021
-   - High Honors
-   - (3.91/4.00)
+   - University of Illinois at Urbana-Champaign - May 2021 - (3.91/4.00) 
  - Associate's in Engineering Science
-   - Parkland Community College - May 2021 
-   - Honors
-   - (3.95/4.00)
+   - Parkland Community College - May 2021 - (3.95/4.00)
 
 ## <ins>Skills
  - Programing Languages (In Order of Competence):
