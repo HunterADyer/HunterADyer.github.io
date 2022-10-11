@@ -14,7 +14,7 @@ I am a cybersecurity reasearch interested in reverse-engineering, malware analys
 
 I keep a log of security research and work that I have done in my own personal time on my [projects](index.md) page. 
 
-Work that is detailed on this page is down in my own time, of my own liberty. All opinions, statements, and results are my own and in no way represent those of my employers.
+Work that is detailed on this page is done in my own time, of my own liberty. All opinions, statements, and results are my own and in no way represent those of my employers.
 
 # Interests and Hobbies
 
