@@ -1,0 +1,48 @@
+---
+import { formatDateShort, readingTime } from '../../lib/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  category: string;
+  tags: string[];
+  slug: string;
+  body?: string;
+}
+
+const { title, description, pubDate, category, tags, slug, body } = Astro.props;
+const readTime = body ? readingTime(body) : '';
+---
+
+<article class="post-card">
+  <span class="post-date">{formatDateShort(new Date(pubDate))}</span>
+  <h3>
+    <a href={`/blog/${category}/${slug}/`}>{title}</a>
+  </h3>
+  <p>{description}</p>
+  <div class="post-card-footer">
+    <div class="tag-list">
+      {tags.map((tag) => (
+        <a href={`/blog/tags/${tag}/`} class="tag">{tag}</a>
+      ))}
+    </div>
+    {readTime && <span class="reading-time">{readTime}</span>}
+  </div>
+</article>
+
+<style>
+  .post-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .reading-time {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+</style>

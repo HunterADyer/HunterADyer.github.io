@@ -1,0 +1,10 @@
+items:
+  - title: "Binary Patch Diffusion: Predicting Masked Assembly via Continuous Diffusion"
+    venue: In preparation
+    year: 2026
+    authors:
+      - Hunter A. Dyer
+    description: >-
+      A continuous diffusion approach for predicting masked spans of x86-64
+      assembly instructions, trained on system ELF binaries.
+    status: in-preparation

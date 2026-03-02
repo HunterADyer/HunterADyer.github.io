@@ -1,0 +1,169 @@
+/* === Landing Theme (Light / Professional) === */
+[data-theme="landing"] {
+  --font-family: 'Inter', system-ui, sans-serif;
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text: #334155;
+  --color-heading: #0f172a;
+  --color-muted: #94a3b8;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-subtle: #dbeafe;
+  --color-tag-bg: #eff6ff;
+  --color-tag-text: #2563eb;
+  --color-card-bg: #ffffff;
+  --color-card-border: #e2e8f0;
+  --color-card-shadow: rgba(0, 0, 0, 0.06);
+  --color-nav-bg: rgba(255, 255, 255, 0.85);
+  --color-nav-border: #e2e8f0;
+}
+
+/* Landing-specific styles */
+[data-theme="landing"] .hero {
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+[data-theme="landing"] .hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+[data-theme="landing"] .hero .subtitle {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-lg);
+}
+
+[data-theme="landing"] .hero .bio {
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+[data-theme="landing"] .cta-group {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+[data-theme="landing"] .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+[data-theme="landing"] .btn-primary {
+  background: var(--color-accent);
+  color: white;
+}
+
+[data-theme="landing"] .btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+[data-theme="landing"] .btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-heading);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="landing"] .btn-secondary:hover {
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+[data-theme="landing"] .section-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+[data-theme="landing"] .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+[data-theme="landing"] .project-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+[data-theme="landing"] .project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+  border-color: var(--color-accent);
+}
+
+[data-theme="landing"] .project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+[data-theme="landing"] .project-card .tagline {
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+[data-theme="landing"] .project-card p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+[data-theme="landing"] .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+[data-theme="landing"] .tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+}
+
+[data-theme="landing"] .social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl) 0;
+}
+
+[data-theme="landing"] .social-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-muted);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+[data-theme="landing"] .social-link:hover {
+  color: var(--color-accent);
+}

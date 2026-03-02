@@ -1,0 +1,48 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+}
+
+const { src, title = 'Notebook' } = Astro.props;
+---
+
+<div class="notebook-embed">
+  <div class="notebook-header">
+    <span class="notebook-title">{title}</span>
+  </div>
+  <iframe
+    src={src}
+    title={title}
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin"
+  ></iframe>
+</div>
+
+<style>
+  .notebook-embed {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: var(--space-lg) 0;
+  }
+
+  .notebook-header {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .notebook-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-heading);
+  }
+
+  iframe {
+    width: 100%;
+    min-height: 500px;
+    border: none;
+    background: white;
+  }
+</style>

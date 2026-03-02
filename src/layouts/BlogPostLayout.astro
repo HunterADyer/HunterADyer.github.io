@@ -1,0 +1,234 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/global/Nav.astro';
+import Footer from '../components/global/Footer.astro';
+import TableOfContents from '../components/blog/TableOfContents.astro';
+import GithubRepoLink from '../components/blog/GithubRepoLink.astro';
+import { formatDate, readingTime } from '../lib/utils';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    updatedDate?: Date;
+    category: string;
+    tags: string[];
+    heroImage?: string;
+    githubRepo?: string;
+    series?: string;
+    seriesOrder?: number;
+    unlisted?: boolean;
+  };
+  headings: Array<{ depth: number; slug: string; text: string }>;
+  rawContent: string;
+}
+
+const { frontmatter, headings, rawContent } = Astro.props;
+const readTime = readingTime(rawContent || '');
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.heroImage}>
+  <div data-theme="hacker" class="scanlines crt-vignette">
+    <Nav />
+    <main class="container content-width">
+      <article class="blog-post">
+        {frontmatter.unlisted && (
+          <div class="unlisted-banner">
+            This post is unlisted — it won't appear in feeds or listings.
+          </div>
+        )}
+        <header class="post-header">
+          <div class="post-meta">
+            <a href={`/blog/${frontmatter.category}/`} class="post-category">{frontmatter.category}</a>
+            <span class="post-date">{formatDate(new Date(frontmatter.pubDate))}</span>
+            <span class="post-reading-time">{readTime}</span>
+          </div>
+          <h1 class="post-title glow">{frontmatter.title}</h1>
+          <p class="post-description">{frontmatter.description}</p>
+
+          {frontmatter.tags && (
+            <div class="tag-list">
+              {frontmatter.tags.map((tag: string) => (
+                <a href={`/blog/tags/${tag}/`} class="tag">{tag}</a>
+              ))}
+            </div>
+          )}
+
+          {frontmatter.githubRepo && (
+            <GithubRepoLink url={frontmatter.githubRepo} />
+          )}
+
+          {frontmatter.updatedDate && (
+            <p class="post-updated">
+              Updated: {formatDate(new Date(frontmatter.updatedDate))}
+            </p>
+          )}
+        </header>
+
+        {headings.length > 0 && <TableOfContents headings={headings} />}
+
+        {frontmatter.heroImage && (
+          <img src={frontmatter.heroImage} alt="" class="post-hero" />
+        )}
+
+        <div class="prose">
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-post {
+    padding: var(--space-xl) 0;
+  }
+
+  .unlisted-banner {
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-lg);
+    border: 1px dashed #f59e0b;
+    border-radius: var(--radius-sm);
+    color: #f59e0b;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .post-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .post-category {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .post-date::before { content: '['; }
+  .post-date::after { content: ']'; }
+
+  .post-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-sm);
+    line-height: 1.2;
+  }
+
+  .post-description {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+  }
+
+  .post-updated {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
+  }
+
+  .post-hero {
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-xl);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Prose styles for blog post content */
+  .prose {
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.5rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-heading);
+  }
+
+  .prose :global(h3) {
+    font-size: 1.2rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--color-heading);
+  }
+
+  .prose :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-xl);
+  }
+
+  .prose :global(ul) { list-style: disc; }
+  .prose :global(ol) { list-style: decimal; }
+
+  .prose :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .prose :global(img) {
+    border-radius: var(--radius-md);
+    margin: var(--space-lg) 0;
+    border: 1px solid var(--color-border);
+  }
+
+  .prose :global(a) {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose :global(a:hover) {
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+  }
+
+  .prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+    font-size: 0.875rem;
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .prose :global(th) {
+    background: var(--color-surface);
+    font-weight: 600;
+    color: var(--color-heading);
+  }
+
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-xl) 0;
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import HackerLayout from '../layouts/HackerLayout.astro';
+---
+
+<HackerLayout title="404 - Not Found">
+  <div class="error-page">
+    <h1 class="glow">404</h1>
+    <p class="error-message">Segmentation fault (core dumped)</p>
+    <p class="error-hint">The page you're looking for doesn't exist.</p>
+    <a href="/" class="back-link">&larr; Return to base</a>
+  </div>
+</HackerLayout>
+
+<style>
+  .error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+  }
+
+  .error-page h1 {
+    font-size: 8rem;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+  }
+
+  .error-message {
+    font-family: 'JetBrains Mono', monospace;
+    color: #ff4444;
+    margin-bottom: var(--space-md);
+  }
+
+  .error-hint {
+    color: var(--color-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .back-link {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+  }
+</style>

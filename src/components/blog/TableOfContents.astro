@@ -1,0 +1,19 @@
+---
+interface Props {
+  headings: Array<{ depth: number; slug: string; text: string }>;
+}
+
+const { headings } = Astro.props;
+const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+---
+
+{filtered.length > 0 && (
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Table of Contents</p>
+    {filtered.map((heading) => (
+      <a href={`#${heading.slug}`} class={`depth-${heading.depth}`}>
+        {heading.text}
+      </a>
+    ))}
+  </nav>
+)}

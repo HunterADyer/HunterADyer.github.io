@@ -1,0 +1,66 @@
+---
+import HackerLayout from '../../layouts/HackerLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const sorted = projects.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<HackerLayout title="Projects" description="Security research and software projects by Hunter A. Dyer">
+  <div class="projects-page">
+    <h1 class="section-title">Projects</h1>
+    <div class="project-grid">
+      {sorted.map((project) => (
+        <div class="project-card">
+          <div class="project-card-header">
+            <h3>
+              {project.data.githubUrl ? (
+                <a href={project.data.githubUrl} target="_blank" rel="noopener noreferrer">
+                  {project.data.name}
+                </a>
+              ) : (
+                project.data.name
+              )}
+            </h3>
+            <span class:list={['status-badge', project.data.status]}>
+              {project.data.status}
+            </span>
+          </div>
+          <p class="tagline">{project.data.tagline}</p>
+          <p>{project.data.description}</p>
+          <div class="tag-list">
+            {project.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+          {project.data.githubUrl && (
+            <a href={project.data.githubUrl} class="project-link no-typing" target="_blank" rel="noopener noreferrer">
+              View on GitHub &rarr;
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</HackerLayout>
+
+<style>
+  .projects-page {
+    padding: var(--space-xl) 0;
+  }
+
+  .project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+---
+
+<div class="view-toggle">
+  <button class="toggle-btn active" data-view="timeline">Timeline</button>
+  <button class="toggle-btn" data-view="traditional">Traditional</button>
+</div>
+
+<style>
+  .view-toggle {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    justify-content: center;
+  }
+
+  .toggle-btn {
+    padding: var(--space-sm) var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-muted);
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .toggle-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .toggle-btn.active {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const buttons = document.querySelectorAll('.toggle-btn');
+    const timelineView = document.getElementById('timeline-view');
+    const traditionalView = document.getElementById('traditional-view');
+
+    if (!timelineView || !traditionalView) return;
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const view = (btn as HTMLElement).dataset.view;
+
+        buttons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (view === 'timeline') {
+          timelineView.style.display = 'block';
+          traditionalView.style.display = 'none';
+        } else {
+          timelineView.style.display = 'none';
+          traditionalView.style.display = 'block';
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,78 @@
+---
+import HackerLayout from '../../../layouts/HackerLayout.astro';
+import BlogPostLayout from '../../../layouts/BlogPostLayout.astro';
+import CategoryTabs from '../../../components/blog/CategoryTabs.astro';
+import PostList from '../../../components/blog/PostList.astro';
+import TagCloud from '../../../components/blog/TagCloud.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const listedPosts = allPosts.filter((p) => !p.data.unlisted);
+  const categories = ['professional', 'personal', 'random'];
+
+  const paths: Array<{ params: { category: string; slug?: string }; props: Record<string, unknown> }> = [];
+
+  // Category listing pages exclude unlisted posts
+  for (const category of categories) {
+    const categoryPosts = listedPosts.filter((p) => p.data.category === category);
+    paths.push({
+      params: { category, slug: undefined },
+      props: { isListing: true, posts: categoryPosts, category },
+    });
+  }
+
+  // Individual post pages: build ALL posts including unlisted
+  for (const post of allPosts) {
+    const category = post.data.category;
+    // Remove the category prefix from the id to get the slug
+    const slug = post.id.replace(/^(professional|personal|random)\//, '').replace(/\.mdx?$/, '');
+    paths.push({
+      params: { category, slug },
+      props: { isListing: false, post },
+    });
+  }
+
+  return paths;
+}
+
+const { category, slug } = Astro.params;
+const { isListing, posts, post } = Astro.props;
+
+// If listing page
+if (isListing) {
+  // Render handled below
+}
+
+// If individual post
+let Content: any;
+let headings: any[] = [];
+let rawContent = '';
+if (!isListing && post) {
+  const rendered = await post.render();
+  Content = rendered.Content;
+  headings = rendered.headings;
+  rawContent = post.body || '';
+}
+---
+
+{isListing ? (
+  <HackerLayout title={`${category} Posts`} description={`${category} blog posts by Hunter A. Dyer`}>
+    <div class="blog-page">
+      <h1 class="section-title">{category} Posts</h1>
+      <CategoryTabs current={category} />
+      <TagCloud posts={posts} />
+      <PostList posts={posts} />
+    </div>
+  </HackerLayout>
+) : (
+  <BlogPostLayout frontmatter={post.data} headings={headings} rawContent={rawContent}>
+    <Content />
+  </BlogPostLayout>
+)}
+
+<style>
+  .blog-page {
+    padding: var(--space-xl) 0;
+  }
+</style>

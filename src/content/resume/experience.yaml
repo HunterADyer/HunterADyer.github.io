@@ -1,0 +1,28 @@
+items:
+  - title: Security Researcher
+    company: Independent
+    location: Remote
+    startDate: "2024-01"
+    endDate: present
+    description: >-
+      Conducting independent research at the intersection of machine learning
+      and binary analysis. Developing novel approaches for automated reverse
+      engineering using diffusion models and transformer architectures.
+    highlights:
+      - Built diffusion-based system for predicting masked x86-64 assembly spans
+      - Trained models on 518K+ examples from system ELF binaries
+      - Exploring publishable results for top ML/security venues
+
+  - title: Reverse Engineer
+    company: Placeholder Corp
+    location: Austin, TX
+    startDate: "2022-06"
+    endDate: "2023-12"
+    description: >-
+      Performed binary analysis and vulnerability research on embedded systems
+      and firmware. Developed automated analysis tooling to accelerate
+      reverse engineering workflows.
+    highlights:
+      - Analyzed firmware for IoT devices and embedded platforms
+      - Developed automated binary analysis pipelines
+      - Contributed to vulnerability disclosure processes

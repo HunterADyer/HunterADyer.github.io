@@ -1,0 +1,25 @@
+---
+interface Props {
+  current?: string;
+}
+
+const { current = 'all' } = Astro.props;
+
+const categories = [
+  { slug: 'all', label: 'All', href: '/blog/' },
+  { slug: 'professional', label: 'Professional', href: '/blog/professional/' },
+  { slug: 'personal', label: 'Personal', href: '/blog/personal/' },
+  { slug: 'random', label: 'Random', href: '/blog/random/' },
+];
+---
+
+<nav class="category-tabs" aria-label="Blog categories">
+  {categories.map(({ slug, label, href }) => (
+    <a
+      href={href}
+      class:list={['category-tab', { active: current === slug }]}
+    >
+      {label}
+    </a>
+  ))}
+</nav>

@@ -1,0 +1,155 @@
+---
+title: "Interactive Components Demo"
+description: "A reference template showing every interactive component available in blog posts."
+pubDate: 2026-02-28
+category: random
+tags:
+  - meta
+  - demo
+draft: true
+---
+
+import CodePlayground from '../../../components/interactive/CodePlayground';
+import D3Visualization from '../../../components/interactive/D3Visualization';
+import GistEmbed from '../../../components/interactive/GistEmbed.astro';
+import NotebookEmbed from '../../../components/interactive/NotebookEmbed.astro';
+
+## Code Playground
+
+Inline JavaScript editor with a run button. Only JS is executable — other languages render as a read-only editor.
+
+### Executable JavaScript
+
+<CodePlayground
+  client:visible
+  title="Fibonacci Generator"
+  language="javascript"
+  initialCode={`function fib(n) {
+  if (n <= 1) return n;
+  let a = 0, b = 1;
+  for (let i = 2; i <= n; i++) {
+    [a, b] = [b, a + b];
+  }
+  return b;
+}
+
+for (let i = 0; i < 12; i++) {
+  console.log(\`fib(\${i}) = \${fib(i)}\`);
+}`}
+/>
+
+### Read-Only (non-JS)
+
+<CodePlayground
+  client:visible
+  title="x86-64 Example"
+  language="x86asm"
+  initialCode={`section .text
+global _start
+
+_start:
+    mov rax, 1          ; sys_write
+    mov rdi, 1          ; stdout
+    lea rsi, [msg]      ; buffer
+    mov rdx, 13         ; length
+    syscall
+
+    mov rax, 60         ; sys_exit
+    xor rdi, rdi
+    syscall
+
+section .data
+msg: db "Hello, world!", 10`}
+/>
+
+---
+
+## D3 Visualization
+
+Generic SVG container. Pass a `renderChart` callback that receives the raw `<svg>` element.
+
+<D3Visualization
+  client:only="react"
+  width={600}
+  height={300}
+  title="Sample Bar Chart"
+  renderChart={(svg, w, h) => {
+    const data = [40, 80, 150, 100, 60, 130, 90];
+    const barW = w / data.length - 8;
+    const maxVal = Math.max(...data);
+
+    data.forEach((d, i) => {
+      const barH = (d / maxVal) * (h - 40);
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('x', String(i * (barW + 8) + 4));
+      rect.setAttribute('y', String(h - barH - 20));
+      rect.setAttribute('width', String(barW));
+      rect.setAttribute('height', String(barH));
+      rect.setAttribute('fill', '#00ff88');
+      rect.setAttribute('rx', '3');
+      svg.appendChild(rect);
+
+      const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      label.setAttribute('x', String(i * (barW + 8) + 4 + barW / 2));
+      label.setAttribute('y', String(h - 4));
+      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('fill', '#546e7a');
+      label.setAttribute('font-size', '12');
+      label.textContent = String(d);
+      svg.appendChild(label);
+    });
+  }}
+/>
+
+---
+
+## Gist Embed
+
+Pulls in a GitHub Gist by ID. Optionally target a specific file.
+
+{/* Replace with a real gist ID */}
+{/* <GistEmbed id="username/abc123def456" /> */}
+{/* <GistEmbed id="username/abc123def456" file="example.py" /> */}
+
+```
+Usage (uncomment with real gist ID):
+
+<GistEmbed id="username/gist-id" />
+<GistEmbed id="username/gist-id" file="specific-file.py" />
+```
+
+---
+
+## Notebook Embed
+
+Renders pre-exported notebook HTML in an iframe. Point `src` at an nbviewer URL or a static HTML export in `public/`.
+
+{/* <NotebookEmbed src="/notebooks/training-analysis.html" title="Training Curves" /> */}
+
+```
+Usage (uncomment with real path):
+
+<NotebookEmbed src="/notebooks/my-notebook.html" title="Analysis" />
+<NotebookEmbed src="https://nbviewer.org/gist/user/id" title="External Notebook" />
+```
+
+---
+
+## Mixing with Regular Markdown
+
+All standard MDX/markdown still works alongside interactive components:
+
+> Blockquotes render normally.
+
+- Bullet lists work
+- As expected
+
+```python
+# Fenced code blocks use Expressive Code with dual themes
+def hello():
+    print("this is a static code block, not a playground")
+```
+
+| Tables | Also | Work |
+|--------|------|------|
+| cell   | cell | cell |

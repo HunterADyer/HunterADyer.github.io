@@ -1,0 +1,29 @@
+---
+interface Props {
+  name: string;
+  tagline: string;
+  description: string;
+  tags: string[];
+  githubUrl?: string;
+  status: string;
+}
+
+const { name, tagline, description, tags, githubUrl, status } = Astro.props;
+---
+
+<div class="project-card">
+  <h3>
+    {githubUrl ? (
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">{name}</a>
+    ) : (
+      name
+    )}
+  </h3>
+  <p class="tagline">{tagline}</p>
+  <p>{description}</p>
+  <div class="tag-list">
+    {tags.map((tag) => (
+      <span class="tag">{tag}</span>
+    ))}
+  </div>
+</div>

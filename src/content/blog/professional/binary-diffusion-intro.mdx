@@ -1,0 +1,79 @@
+---
+title: "Predicting Masked Assembly with Diffusion Models"
+description: "How I built a continuous diffusion system that predicts masked spans of x86-64 assembly instructions — and what it teaches us about binary understanding."
+pubDate: 2026-02-28
+category: professional
+tags:
+  - machine-learning
+  - diffusion
+  - reverse-engineering
+  - x86-64
+githubRepo: https://github.com/HunterADyer/binary-patch-diffusion
+series: "Binary Patch Diffusion"
+seriesOrder: 1
+draft: false
+---
+
+## The Problem
+
+When reverse engineering stripped binaries, analysts frequently encounter corrupted or obfuscated code regions. What if we could train a model to *predict* what should be there?
+
+This project explores using **continuous diffusion models** — the same family behind image generators like Stable Diffusion — to predict masked spans of x86-64 assembly instructions.
+
+## Why Diffusion?
+
+The initial approach used a BERT-style masked language model, which reached ~85% accuracy predicting individual masked tokens. But assembly isn't natural language — instruction sequences have rich structural dependencies that benefit from iterative refinement.
+
+Diffusion models offer:
+- **Iterative denoising**: The model refines predictions over multiple steps
+- **Continuous representations**: Embed discrete tokens into continuous space for smoother gradients
+- **Conditional generation**: Condition on surrounding context naturally
+
+## Architecture
+
+The model uses a **Diffusion Transformer (DiT)** with adaptive layer normalization (adaLN-Zero):
+
+```python
+class DiTBlock(nn.Module):
+    """Transformer block with adaLN-Zero conditioning."""
+    def __init__(self, d_model, n_heads, ff_dim):
+        super().__init__()
+        self.norm1 = nn.LayerNorm(d_model, elementwise_affine=False)
+        self.attn = nn.MultiheadAttention(d_model, n_heads, batch_first=True)
+        self.norm2 = nn.LayerNorm(d_model, elementwise_affine=False)
+        self.ff = nn.Sequential(
+            nn.Linear(d_model, ff_dim),
+            nn.GELU(),
+            nn.Linear(ff_dim, d_model),
+        )
+        # adaLN-Zero: learn scale/shift from timestep
+        self.adaln = nn.Linear(d_model, 6 * d_model)
+```
+
+The key insight is that **timestep conditioning via adaLN-Zero** lets the model modulate its behavior depending on the noise level, producing coarse predictions early and fine details late.
+
+## Dataset
+
+Training data comes from **5,675 system ELF binaries** on a standard Linux installation:
+
+| Metric | Value |
+|--------|-------|
+| Total examples | 518,000 |
+| Vocabulary size | 386 tokens |
+| Sequence length | 512 |
+| Mask ratio | 15-30% |
+
+## Training
+
+The model has **134.9M parameters** and trains on a single RTX PRO 6000 (96GB VRAM):
+
+- Batch size: 128, gradient accumulation: 2
+- Cosine noise schedule, 1000 timesteps
+- Mixed precision (AMP) training
+- ~42 minutes per epoch, 30 epochs total
+
+## What's Next
+
+In the next post, I'll cover the sampling process and show how the model's predictions compare to ground truth across different instruction types — arithmetic, control flow, and memory operations.
+
+Stay tuned.

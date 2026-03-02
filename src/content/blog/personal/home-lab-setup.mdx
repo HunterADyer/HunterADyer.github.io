@@ -1,0 +1,46 @@
+---
+title: "My Home Lab: 96GB GPU, 40TB NAS, and Why It Matters"
+description: "A walkthrough of my home research lab setup — the hardware choices, the network topology, and how it enables ML research without cloud bills."
+pubDate: 2026-02-15
+category: personal
+tags:
+  - homelab
+  - hardware
+  - gpu
+  - machine-learning
+draft: false
+---
+
+## Why a Home Lab?
+
+Cloud GPU costs add up fast. Training a 134M parameter model for 30 epochs on an A100 instance would run about $200-400 per experiment. When you're iterating on architectures, that's thousands of dollars a month.
+
+My solution: invest in hardware once and iterate freely.
+
+## The Build
+
+### Compute
+
+The centerpiece is an **NVIDIA RTX PRO 6000 Blackwell** with 96GB of VRAM. This thing is a beast — it handles batch sizes that would require multi-GPU setups on older cards.
+
+Key specs:
+- 96GB GDDR7 VRAM
+- Blackwell architecture
+- PCIe Gen5 x16
+
+### Storage
+
+- **40TB NAS** — stores datasets, model checkpoints, and backups
+- **1.8TB NVMe SSD** — fast working storage for active training runs
+
+### Why This Matters
+
+The 96GB VRAM means I can train models with batch sizes of 128+ without gradient checkpointing hacks. The large NAS means I can keep every checkpoint from every experiment, making it easy to go back and compare.
+
+## Cost Analysis
+
+The GPU cost roughly the same as 6 months of comparable cloud compute. Everything after that is profit (well, minus electricity). For someone doing continuous research, the break-even point comes fast.
+
+## What I'd Change
+
+If I were building again today, I'd add a second NVMe in RAID-0 for even faster data loading. The NAS over 10GbE is fine for most things, but data loading can bottleneck at the start of training epochs.

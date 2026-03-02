@@ -1,0 +1,171 @@
+---
+import { getEntry } from 'astro:content';
+
+const experience = await getEntry('resume', 'experience');
+const education = await getEntry('resume', 'education');
+const skills = await getEntry('resume', 'skills');
+const publications = await getEntry('resume', 'publications');
+---
+
+<div class="traditional-resume">
+  <section class="resume-section">
+    <h2>Experience</h2>
+    {experience.data.items.map((job: any) => (
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <div>
+            <h3>{job.title}</h3>
+            <p class="resume-company">{job.company} &mdash; {job.location}</p>
+          </div>
+          <span class="resume-date">{job.startDate} &ndash; {job.endDate}</span>
+        </div>
+        <p class="resume-description">{job.description}</p>
+        {job.highlights && (
+          <ul class="resume-highlights">
+            {job.highlights.map((h: string) => <li>{h}</li>)}
+          </ul>
+        )}
+      </div>
+    ))}
+  </section>
+
+  <section class="resume-section">
+    <h2>Education</h2>
+    {education.data.items.map((edu: any) => (
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <div>
+            <h3>{edu.degree}</h3>
+            <p class="resume-company">{edu.institution} &mdash; {edu.location}</p>
+          </div>
+          <span class="resume-date">{edu.startDate} &ndash; {edu.endDate}</span>
+        </div>
+        <p class="resume-description">{edu.description}</p>
+        {edu.highlights && (
+          <ul class="resume-highlights">
+            {edu.highlights.map((h: string) => <li>{h}</li>)}
+          </ul>
+        )}
+      </div>
+    ))}
+  </section>
+
+  <section class="resume-section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      {skills.data.items.map((group: any) => (
+        <div class="skill-group">
+          <h4>{group.category}</h4>
+          <div class="skill-tags">
+            {group.skills.map((s: string) => <span class="skill-tag">{s}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2>Publications</h2>
+    {publications.data.items.map((pub: any) => (
+      <div class="resume-entry">
+        <h3>{pub.title}</h3>
+        <p class="resume-company">
+          {pub.authors.join(', ')} &mdash; {pub.venue} ({pub.year})
+        </p>
+        <p class="resume-description">{pub.description}</p>
+      </div>
+    ))}
+  </section>
+</div>
+
+<style>
+  .traditional-resume {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+
+  .resume-section {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .resume-section h2 {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .resume-entry {
+    margin-bottom: var(--space-xl);
+  }
+
+  .resume-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .resume-entry h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  .resume-company {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  .resume-date {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .resume-description {
+    font-size: 0.9rem;
+    margin-top: var(--space-sm);
+    line-height: 1.6;
+  }
+
+  .resume-highlights {
+    margin-top: var(--space-sm);
+    padding-left: var(--space-lg);
+    list-style: disc;
+  }
+
+  .resume-highlights li {
+    font-size: 0.875rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .skill-group h4 {
+    font-size: 0.9rem;
+    color: var(--color-heading);
+    margin-bottom: var(--space-sm);
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
+    border: 1px solid var(--color-border);
+  }
+</style>

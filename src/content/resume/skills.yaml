@@ -1,0 +1,32 @@
+items:
+  - category: Languages
+    skills:
+      - Python
+      - C/C++
+      - Rust
+      - x86-64 Assembly
+      - TypeScript
+
+  - category: ML/AI
+    skills:
+      - PyTorch
+      - Diffusion Models
+      - Transformers
+      - NLP
+      - Computer Vision
+
+  - category: Security
+    skills:
+      - Reverse Engineering
+      - Binary Analysis
+      - IDA Pro / Ghidra
+      - Vulnerability Research
+      - Firmware Analysis
+
+  - category: Tools
+    skills:
+      - Git
+      - Linux
+      - Docker
+      - GDB
+      - Radare2
