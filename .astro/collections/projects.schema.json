@@ -11,7 +11,8 @@
           "type": "string"
         },
         "description": {
-          "type": "string"
+          "type": "string",
+          "default": ""
         },
         "status": {
           "type": "string",
@@ -51,7 +52,6 @@
       "required": [
         "name",
         "tagline",
-        "description",
         "status"
       ],
       "additionalProperties": false

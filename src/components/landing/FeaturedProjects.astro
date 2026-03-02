@@ -3,14 +3,15 @@ import ProjectCard from './ProjectCard.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
-const featured = projects
-  .filter((p) => p.data.featured)
+const explicitlyFeatured = projects.filter((p) => p.data.featured);
+// Show featured projects, or all projects if none are marked featured
+const featured = (explicitlyFeatured.length > 0 ? explicitlyFeatured : projects)
   .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 ---
 
 {featured.length > 0 && (
   <section class="featured-projects">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title">Projects</h2>
     <div class="project-grid">
       {featured.map((project) => (
         <ProjectCard

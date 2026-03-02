@@ -71,10 +71,14 @@ function buildFrontmatter(repo, sortOrder) {
     ? '\ntags:\n' + tags.map((t) => `  - ${t}`).join('\n')
     : '\ntags: []';
 
+  // Make the name human-readable (kebab-case → Title Case)
+  const displayName = repo.name.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  const desc = repo.description || '';
+
   return `---
-name: ${repo.name}
-tagline: ${repo.description || repo.name}
-description: ${repo.description || ''}
+name: "${displayName}"
+tagline: "${desc || displayName}"
+description: "${desc}"
 status: ${inferStatus(repo)}
 githubUrl: ${repo.html_url}${tagYaml}
 featured: false
