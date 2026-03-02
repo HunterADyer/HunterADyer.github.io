@@ -4,8 +4,9 @@ items:
     location: Redmond, WA
     startDate: August 2025
     endDate: Present
-    description: Conducted reverse engineering of zero-day vulnerabilities to identify root causes and exploitation primitives.
+    description: 
     highlights:
+      - Conducted reverse engineering of zero-day vulnerabilities to identify root causes and exploitation primitives.
       - Developed minimized proof-of-concept exploits to validate exploitability and assess real-world impact.
       - Authored customer-facing technical vulnerability analyses and detection guidance, including IOCs and YARA signatures.
       - Represented the security organization during incident response, partnering with engineering to drive effective mitigation implementation.
@@ -16,8 +17,9 @@ items:
     location: Shoreview, MN
     startDate: July 2022
     endDate: August 2025
-    description: Conducted low-level system binary analysis, reverse-engineering, and vulnerability research through the use of user-mode and kernel-mode debuggers, disassemblers, and decompilers.
+    description: 
     highlights:
+      - Conducted low-level system binary analysis, reverse-engineering, and vulnerability research through the use of user-mode and kernel-mode debuggers, disassemblers, and decompilers.
       - Gained a deep understanding of Microsoft’s Virtualization-Based Security (VBS) protections and features to ensure customer security requirements were met.
       - Led vulnerability assessments of desktop, backend, and web applications which resulted in identifying multiple vulnerabilities including an authentication bypass, XSS vectors, information leaks, security misconfigurations, and other OWASP Top 10 vulnerabilities.
       - Led threat modeling and risk analysis processes to guide vulnerability assessments and recommendations of vulnerability remediation options.
@@ -29,8 +31,9 @@ items:
     location: Urbana, IL / Washington, D.C.
     startDate: 2020
     endDate: 2022
-    description: Conducted large-scale empirical analysis of Android applications across official and unofficial distribution platforms to measure prevalence of tampering and repackaging.
+    description: 
     highlights:
+      - Conducted large-scale empirical analysis of Android applications across official and unofficial distribution platforms to measure prevalence of tampering and repackaging.
       - Performed reverse engineering, static and dynamic analysis of Android COVID-19 contact tracing applications to identify privacy and security weaknesses.
       - Designed tooling to automate dataset generation and vulnerability analysis workflows.
       - Evaluated security controls against NIST, FedRAMP, and C5 frameworks.

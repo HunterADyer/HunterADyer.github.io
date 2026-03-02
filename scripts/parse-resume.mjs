@@ -110,8 +110,8 @@ function parseExperience() {
       location: role.location,
       startDate,
       endDate,
-      description: highlights[0] || '',
-      highlights: highlights.slice(1),
+      description: '',
+      highlights,
     });
   }
 

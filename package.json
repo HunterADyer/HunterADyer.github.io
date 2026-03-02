@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "resume": "node scripts/parse-resume.mjs",
+    "projects": "node scripts/sync-projects.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
