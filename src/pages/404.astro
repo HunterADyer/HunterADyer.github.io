@@ -1,15 +1,15 @@
 ---
-import HackerLayout from '../layouts/HackerLayout.astro';
+import LandingLayout from '../layouts/LandingLayout.astro';
 ---
 
-<HackerLayout title="404 - Not Found">
+<LandingLayout title="404 - Not Found">
   <div class="error-page">
-    <h1 class="glow">404</h1>
-    <p class="error-message">Segmentation fault (core dumped)</p>
+    <h1>404</h1>
+    <p class="error-message">Page not found</p>
     <p class="error-hint">The page you're looking for doesn't exist.</p>
-    <a href="/" class="back-link">&larr; Return to base</a>
+    <a href="/" class="back-link">&larr; Back to home</a>
   </div>
-</HackerLayout>
+</LandingLayout>
 
 <style>
   .error-page {
@@ -29,8 +29,8 @@ import HackerLayout from '../layouts/HackerLayout.astro';
   }
 
   .error-message {
-    font-family: 'JetBrains Mono', monospace;
-    color: #ff4444;
+    color: var(--color-muted);
+    font-size: 1.25rem;
     margin-bottom: var(--space-md);
   }
 

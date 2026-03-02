@@ -1,11 +1,15 @@
 items:
-  - degree: B.S. Computer Science
-    institution: University Placeholder
-    location: Austin, TX
-    startDate: "2018-08"
-    endDate: "2022-05"
-    description: >-
-      Focus on systems programming, computer security, and machine learning.
-    highlights:
-      - Relevant coursework in OS internals, compilers, cryptography, and deep learning
-      - Undergraduate research in binary analysis
+  - degree: M.C.S., Computer Science
+    institution: University of Illinois at Urbana-Champaign
+    location: 
+    startDate: 
+    endDate: 2021
+    description: 
+    highlights: []
+  - degree: B.S., Computer Science – High Honors
+    institution: University of Illinois at Urbana-Champaign
+    location: 
+    startDate: 
+    endDate: 2021
+    description: 
+    highlights: []

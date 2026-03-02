@@ -16,9 +16,7 @@ function isActive(href: string): boolean {
 
 <nav class="nav" transition:persist>
   <div class="nav-inner container">
-    <a href="/" class="nav-logo no-typing">
-      <span class="logo-bracket">[</span>HAD<span class="logo-bracket">]</span>
-    </a>
+    <a href="/" class="nav-logo no-typing">HAD</a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span class="hamburger"></span>
     </button>
@@ -58,15 +56,10 @@ function isActive(href: string): boolean {
   }
 
   .nav-logo {
-    font-family: 'JetBrains Mono', monospace;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-heading);
     text-decoration: none;
-  }
-
-  .logo-bracket {
-    color: var(--color-accent);
   }
 
   .nav-links {

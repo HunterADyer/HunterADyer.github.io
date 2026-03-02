@@ -1,11 +1,5 @@
 /* === Code Block Styles === */
 
-/* Use dark theme for code blocks in hacker mode */
-[data-theme="hacker"] .expressive-code,
-[data-theme="hacker"] pre {
-  --ec-frm-edBg: var(--color-surface) !important;
-}
-
 /* Use light theme for code blocks in landing mode */
 [data-theme="landing"] .expressive-code {
   --ec-frm-edBg: #f8fafc !important;
@@ -20,12 +14,6 @@
   border: 1px solid var(--color-border);
 }
 
-[data-theme="hacker"] :not(pre) > code {
-  color: var(--color-accent);
-  background: rgba(0, 255, 136, 0.06);
-  border-color: rgba(0, 255, 136, 0.15);
-}
-
 /* Code block container */
 pre {
   border-radius: var(--radius-md);
@@ -33,11 +21,6 @@ pre {
   overflow-x: auto;
   font-size: 0.875rem;
   line-height: 1.7;
-}
-
-[data-theme="hacker"] pre {
-  border: 1px solid var(--color-border);
-  background: var(--color-surface) !important;
 }
 
 /* Expressive code overrides */
@@ -48,11 +31,6 @@ pre {
 .expressive-code .frame {
   border-radius: var(--radius-md);
   overflow: hidden;
-}
-
-[data-theme="hacker"] .expressive-code .frame {
-  border: 1px solid var(--color-border);
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.03);
 }
 
 /* Blog post prose styling */

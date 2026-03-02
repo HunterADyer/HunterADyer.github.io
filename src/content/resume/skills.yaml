@@ -2,31 +2,46 @@ items:
   - category: Languages
     skills:
       - Python
-      - C/C++
-      - Rust
-      - x86-64 Assembly
-      - TypeScript
-
-  - category: ML/AI
+      - C
+      - C++
+      - x86/x64 Assembly
+      - Bash
+  - category: "Reverse Engineering & Debugging"
     skills:
-      - PyTorch
-      - Diffusion Models
-      - Transformers
-      - NLP
-      - Computer Vision
-
-  - category: Security
-    skills:
-      - Reverse Engineering
-      - Binary Analysis
-      - IDA Pro / Ghidra
-      - Vulnerability Research
-      - Firmware Analysis
-
-  - category: Tools
-    skills:
-      - Git
-      - Linux
-      - Docker
+      - IDA Pro
+      - Ghidra
+      - Binary Ninja
+      - WinDbg
       - GDB
-      - Radare2
+      - JADX
+      - Sysinternals Suite
+  - category: "Binary & Systems Analysis"
+    skills:
+      - Static analysis
+      - dynamic analysis
+      - root cause analysis
+      - exploitability assessment
+      - crash triage
+      - memory corruption analysis
+      - patch diffing
+  - category: Security Tooling
+    skills:
+      - YARA rule development
+      - Proof-of-Concept  development
+      - Burp Suite Pro
+      - Wireshark
+      - Software Composition Analysis  tools
+  - category: Platforms
+    skills:
+      - Windows
+      - Linux
+      - Android
+  - category: Domains
+    skills:
+      - Vulnerability research
+      - reverse engineering
+      - program analysis
+      - application security
+      - threat modeling
+      - risk assessment
+      - Web Application Security

@@ -1,27 +1,19 @@
 ---
-import HackerLayout from '../../layouts/HackerLayout.astro';
+import LandingLayout from '../../layouts/LandingLayout.astro';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
 const sorted = projects.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 ---
 
-<HackerLayout title="Projects" description="Security research and software projects by Hunter A. Dyer">
+<LandingLayout title="Projects" description="Security research and software projects by Hunter A. Dyer">
   <div class="projects-page">
     <h1 class="section-title">Projects</h1>
     <div class="project-grid">
       {sorted.map((project) => (
-        <div class="project-card">
+        <a href={`/projects/${project.id.replace(/\.mdx?$/, '')}/`} class="project-card no-typing">
           <div class="project-card-header">
-            <h3>
-              {project.data.githubUrl ? (
-                <a href={project.data.githubUrl} target="_blank" rel="noopener noreferrer">
-                  {project.data.name}
-                </a>
-              ) : (
-                project.data.name
-              )}
-            </h3>
+            <h3>{project.data.name}</h3>
             <span class:list={['status-badge', project.data.status]}>
               {project.data.status}
             </span>
@@ -33,16 +25,12 @@ const sorted = projects.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
               <span class="tag">{tag}</span>
             ))}
           </div>
-          {project.data.githubUrl && (
-            <a href={project.data.githubUrl} class="project-link no-typing" target="_blank" rel="noopener noreferrer">
-              View on GitHub &rarr;
-            </a>
-          )}
-        </div>
+          <span class="project-link">Read writeup &rarr;</span>
+        </a>
       ))}
     </div>
   </div>
-</HackerLayout>
+</LandingLayout>
 
 <style>
   .projects-page {

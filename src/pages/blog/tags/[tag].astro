@@ -1,5 +1,5 @@
 ---
-import HackerLayout from '../../../layouts/HackerLayout.astro';
+import LandingLayout from '../../../layouts/LandingLayout.astro';
 import PostList from '../../../components/blog/PostList.astro';
 import CategoryTabs from '../../../components/blog/CategoryTabs.astro';
 import { getCollection } from 'astro:content';
@@ -21,13 +21,13 @@ export async function getStaticPaths() {
 const { tag, posts } = Astro.props;
 ---
 
-<HackerLayout title={`Tag: ${tag}`} description={`Posts tagged with "${tag}"`}>
+<LandingLayout title={`Tag: ${tag}`} description={`Posts tagged with "${tag}"`}>
   <div class="blog-page">
     <h1 class="section-title">#{tag}</h1>
     <CategoryTabs />
     <PostList posts={posts} />
   </div>
-</HackerLayout>
+</LandingLayout>
 
 <style>
   .blog-page {

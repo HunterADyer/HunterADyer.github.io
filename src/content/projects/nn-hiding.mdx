@@ -1,0 +1,36 @@
+---
+name: NN-Hiding
+tagline: Steganographic neural network weight concealment
+description: >-
+  Research into hiding neural network weights within other neural networks
+  using steganographic techniques. Explores the intersection of model
+  security and information hiding.
+status: completed
+githubUrl: https://github.com/HunterADyer/nn-hiding
+tags:
+  - machine-learning
+  - steganography
+  - security
+featured: true
+sortOrder: 3
+---
+
+## Overview
+
+NN-Hiding explores the intersection of model security and information hiding. The core question: can you embed one neural network's weights inside another without meaningfully degrading the host model's performance?
+
+## Approach
+
+Using steganographic techniques adapted for the continuous weight space of neural networks, this project demonstrates methods for:
+
+- Encoding a payload model's weights into the least significant bits of a host model
+- Maintaining host model accuracy within acceptable thresholds
+- Extracting the hidden model with full fidelity
+
+## Implications
+
+This research has implications for:
+
+- **Model watermarking** — proving ownership of trained models
+- **Covert model distribution** — embedding models in innocuous carriers
+- **Model security** — understanding attack surfaces in weight sharing

@@ -1,5 +1,5 @@
 ---
-import HackerLayout from '../../layouts/HackerLayout.astro';
+import LandingLayout from '../../layouts/LandingLayout.astro';
 import CategoryTabs from '../../components/blog/CategoryTabs.astro';
 import PostList from '../../components/blog/PostList.astro';
 import TagCloud from '../../components/blog/TagCloud.astro';
@@ -8,14 +8,14 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog', ({ data }) => !data.draft && !data.unlisted);
 ---
 
-<HackerLayout title="Blog" description="Security research, reverse engineering, and random thoughts.">
+<LandingLayout title="Blog" description="Security research, reverse engineering, and random thoughts.">
   <div class="blog-page">
     <h1 class="section-title">Blog</h1>
     <CategoryTabs current="all" />
     <TagCloud posts={posts} />
     <PostList posts={posts} />
   </div>
-</HackerLayout>
+</LandingLayout>
 
 <style>
   .blog-page {

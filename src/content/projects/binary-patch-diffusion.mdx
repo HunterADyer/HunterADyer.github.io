@@ -1,0 +1,44 @@
+---
+name: Binary Patch Diffusion
+tagline: Predicting masked x86-64 assembly via diffusion models
+description: >-
+  An ML system that uses continuous diffusion to predict masked spans of x86-64
+  assembly instructions. Trained on 518k examples extracted from 5,675 system
+  ELF binaries. Features a DiT architecture with adaLN-Zero conditioning.
+status: active
+githubUrl: https://github.com/HunterADyer/binary-patch-diffusion
+tags:
+  - machine-learning
+  - reverse-engineering
+  - diffusion
+  - x86-64
+featured: true
+sortOrder: 1
+---
+
+## Overview
+
+Binary Patch Diffusion uses **continuous diffusion models** — the same family behind image generators like Stable Diffusion — to predict masked spans of x86-64 assembly instructions. When reverse engineering stripped binaries, analysts frequently encounter corrupted or obfuscated code regions. This system can predict what should be there.
+
+## Architecture
+
+The model uses a **Diffusion Transformer (DiT)** with adaptive layer normalization (adaLN-Zero). Timestep conditioning via adaLN-Zero lets the model modulate its behavior depending on the noise level, producing coarse predictions early and fine details late.
+
+- **134.9M parameters**
+- Cosine noise schedule, 1000 timesteps
+- Mixed precision (AMP) training
+
+## Dataset
+
+Training data comes from **5,675 system ELF binaries** on a standard Linux installation:
+
+| Metric | Value |
+|--------|-------|
+| Total examples | 518,000 |
+| Vocabulary size | 386 tokens |
+| Sequence length | 512 |
+| Mask ratio | 15–30% |
+
+## Results
+
+The initial BERT-style masked language model reached ~85% accuracy predicting individual masked tokens. The diffusion approach enables iterative refinement over multiple denoising steps, producing more coherent multi-token predictions.

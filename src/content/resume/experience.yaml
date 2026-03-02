@@ -1,28 +1,36 @@
 items:
-  - title: Security Researcher
-    company: Independent
-    location: Remote
-    startDate: "2024-01"
-    endDate: present
-    description: >-
-      Conducting independent research at the intersection of machine learning
-      and binary analysis. Developing novel approaches for automated reverse
-      engineering using diffusion models and transformer architectures.
+  - title: Security Researcher II
+    company: Microsoft
+    location: Redmond, WA
+    startDate: August 2025
+    endDate: Present
+    description: Conducted reverse engineering of zero-day vulnerabilities to identify root causes and exploitation primitives.
     highlights:
-      - Built diffusion-based system for predicting masked x86-64 assembly spans
-      - Trained models on 518K+ examples from system ELF binaries
-      - Exploring publishable results for top ML/security venues
-
-  - title: Reverse Engineer
-    company: Placeholder Corp
-    location: Austin, TX
-    startDate: "2022-06"
-    endDate: "2023-12"
-    description: >-
-      Performed binary analysis and vulnerability research on embedded systems
-      and firmware. Developed automated analysis tooling to accelerate
-      reverse engineering workflows.
+      - Developed minimized proof-of-concept exploits to validate exploitability and assess real-world impact.
+      - Authored customer-facing technical vulnerability analyses and detection guidance, including IOCs and YARA signatures.
+      - Represented the security organization during incident response, partnering with engineering to drive effective mitigation implementation.
+      - Bridged security research and engineering teams to translate findings into actionable remediation strategies.
+      - Conducted root cause and exploitability assessment during vulnerability triage to determine real-world impact and mitigation urgency.
+  - title: "Cybersecurity R&D"
+    company: Sandia National Laboratories – Member of Technical Staff
+    location: Shoreview, MN
+    startDate: July 2022
+    endDate: August 2025
+    description: Conducted low-level system binary analysis, reverse-engineering, and vulnerability research through the use of user-mode and kernel-mode debuggers, disassemblers, and decompilers.
     highlights:
-      - Analyzed firmware for IoT devices and embedded platforms
-      - Developed automated binary analysis pipelines
-      - Contributed to vulnerability disclosure processes
+      - Gained a deep understanding of Microsoft’s Virtualization-Based Security (VBS) protections and features to ensure customer security requirements were met.
+      - Led vulnerability assessments of desktop, backend, and web applications which resulted in identifying multiple vulnerabilities including an authentication bypass, XSS vectors, information leaks, security misconfigurations, and other OWASP Top 10 vulnerabilities.
+      - Led threat modeling and risk analysis processes to guide vulnerability assessments and recommendations of vulnerability remediation options.
+      - Developed and maintained research and analysis tooling.
+      - Guided teams’ technical efforts and research directions through multiple software assessments while continuing to make impactful technical contributions.
+      - Routinely communicated team progress and results to stakeholders through oral and written communications at varying levels of technical detail.
+  - title: Android Security Researcher
+    company: "University of Illinois at Urbana-Champaign & The George Washington University"
+    location: Urbana, IL / Washington, D.C.
+    startDate: 2020
+    endDate: 2022
+    description: Conducted large-scale empirical analysis of Android applications across official and unofficial distribution platforms to measure prevalence of tampering and repackaging.
+    highlights:
+      - Performed reverse engineering, static and dynamic analysis of Android COVID-19 contact tracing applications to identify privacy and security weaknesses.
+      - Designed tooling to automate dataset generation and vulnerability analysis workflows.
+      - Evaluated security controls against NIST, FedRAMP, and C5 frameworks.

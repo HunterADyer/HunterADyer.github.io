@@ -4,21 +4,15 @@ interface Props {
   tagline: string;
   description: string;
   tags: string[];
-  githubUrl?: string;
+  slug: string;
   status: string;
 }
 
-const { name, tagline, description, tags, githubUrl, status } = Astro.props;
+const { name, tagline, description, tags, slug } = Astro.props;
 ---
 
-<div class="project-card">
-  <h3>
-    {githubUrl ? (
-      <a href={githubUrl} target="_blank" rel="noopener noreferrer">{name}</a>
-    ) : (
-      name
-    )}
-  </h3>
+<a href={`/projects/${slug.replace(/\.mdx?$/, '')}/`} class="project-card no-typing">
+  <h3>{name}</h3>
   <p class="tagline">{tagline}</p>
   <p>{description}</p>
   <div class="tag-list">
@@ -26,4 +20,4 @@ const { name, tagline, description, tags, githubUrl, status } = Astro.props;
       <span class="tag">{tag}</span>
     ))}
   </div>
-</div>
+</a>

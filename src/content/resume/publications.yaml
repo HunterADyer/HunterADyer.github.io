@@ -1,10 +1,45 @@
 items:
-  - title: "Binary Patch Diffusion: Predicting Masked Assembly via Continuous Diffusion"
-    venue: In preparation
-    year: 2026
+  - title: "Awareness, Intention, (In)Action: Individuals’ Reactions to Data Breaches"
+    venue: ACM Transactions on Computer-Human Interaction (TOCHI)
+    year: 2023
     authors:
+      - Peter Mayer
+      - Yixin Zou
+      - Byron M. Lowens
       - Hunter A. Dyer
-    description: >-
-      A continuous diffusion approach for predicting masked spans of x86-64
-      assembly instructions, trained on system ELF binaries.
-    status: in-preparation
+      - Khue Le
+      - Florian Schaub
+      - Adam J. Aviv
+    description: 
+    status: published
+  - title: "Enabling User-Centered Privacy Controls for Mobile Applications: COVID-19 Perspective"
+    venue: ACM Transactions on Internet Technology (TOIT)
+    year: 2021
+    authors:
+      - Tanusree Sharma
+      - Hunter A. Dyer
+      - Masooda Bashir
+    description: 
+    status: published
+  - title: Mapping Risk Assessment Strategy for COVID-19 Mobile Apps’ Vulnerabilities
+    venue: Lecture Notes in Networks and Systems (LNNS)
+    year: 2021
+    authors:
+      - Tanusree Sharma
+      - Hunter A. Dyer
+      - Roy H. Campbell
+      - Masooda Bashir
+    description: 
+    status: published
+  - title: "“Someone Definitely Used 0000”: Strategies, Performance, and User Perception of Novice Smartphone-Unlock PIN-Guessers"
+    venue: Proceedings of the European Symposium on Usable Security (EuroUSEC)
+    year: 2023
+    authors:
+      - Daniel V. Bailey
+      - Collins W. Munyendo
+      - Hunter A. Dyer
+      - Miles Grant
+      - Philipp Markert
+      - Adam J. Aviv
+    description: 
+    status: published

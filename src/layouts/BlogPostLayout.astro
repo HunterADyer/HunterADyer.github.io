@@ -29,7 +29,7 @@ const readTime = readingTime(rawContent || '');
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description} image={frontmatter.heroImage}>
-  <div data-theme="hacker" class="scanlines crt-vignette">
+  <div data-theme="landing">
     <Nav />
     <main class="container content-width">
       <article class="blog-post">
@@ -44,7 +44,7 @@ const readTime = readingTime(rawContent || '');
             <span class="post-date">{formatDate(new Date(frontmatter.pubDate))}</span>
             <span class="post-reading-time">{readTime}</span>
           </div>
-          <h1 class="post-title glow">{frontmatter.title}</h1>
+          <h1 class="post-title">{frontmatter.title}</h1>
           <p class="post-description">{frontmatter.description}</p>
 
           {frontmatter.tags && (
@@ -115,9 +115,6 @@ const readTime = readingTime(rawContent || '');
     color: var(--color-accent);
     font-weight: 500;
   }
-
-  .post-date::before { content: '['; }
-  .post-date::after { content: ']'; }
 
   .post-title {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -203,7 +200,7 @@ const readTime = readingTime(rawContent || '');
   }
 
   .prose :global(a:hover) {
-    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+    color: var(--color-accent-hover);
   }
 
   .prose :global(table) {
