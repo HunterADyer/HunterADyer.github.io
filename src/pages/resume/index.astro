@@ -9,20 +9,22 @@ const experience = await getEntry('resume', 'experience');
 const education = await getEntry('resume', 'education');
 const publications = await getEntry('resume', 'publications');
 
-// Build timeline items from resume data
+// Build timeline items from resume data, sorted most-recent-first
 const timelineItems = [
   ...experience.data.items.map((item: any) => ({
     title: item.title,
     subtitle: `${item.company} — ${item.location}`,
-    date: `${item.startDate} – ${item.endDate}`,
+    date: item.startDate ? `${item.startDate} – ${item.endDate}` : String(item.endDate),
+    sortKey: String(item.endDate).toLowerCase() === 'present' ? '9999' : String(item.endDate),
     description: item.description,
     highlights: item.highlights || [],
     type: 'experience' as const,
   })),
   ...education.data.items.map((item: any) => ({
     title: item.degree,
-    subtitle: `${item.institution} — ${item.location}`,
-    date: `${item.startDate} – ${item.endDate}`,
+    subtitle: item.location ? `${item.institution} — ${item.location}` : item.institution,
+    date: item.startDate ? `${item.startDate} – ${item.endDate}` : String(item.endDate),
+    sortKey: String(item.endDate),
     description: item.description,
     highlights: item.highlights || [],
     type: 'education' as const,
@@ -31,11 +33,12 @@ const timelineItems = [
     title: item.title,
     subtitle: `${item.venue} (${item.year})`,
     date: String(item.year),
+    sortKey: String(item.year),
     description: item.description,
     highlights: [],
     type: 'publication' as const,
   })),
-];
+].sort((a, b) => b.sortKey.localeCompare(a.sortKey));
 ---
 
 <LandingLayout title="Resume" description="Hunter A. Dyer's professional resume">

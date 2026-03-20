@@ -38,7 +38,7 @@ const publications = await getEntry('resume', 'publications');
             <h3>{edu.degree}</h3>
             <p class="resume-company">{edu.institution} &mdash; {edu.location}</p>
           </div>
-          <span class="resume-date">{edu.startDate} &ndash; {edu.endDate}</span>
+          <span class="resume-date">{edu.startDate ? `${edu.startDate} – ${edu.endDate}` : edu.endDate}</span>
         </div>
         <p class="resume-description">{edu.description}</p>
         {edu.highlights && (
