@@ -1,12 +1,9 @@
 ---
-import LandingLayout from '../layouts/LandingLayout.astro';
-import Hero from '../components/landing/Hero.astro';
-import FeaturedProjects from '../components/landing/FeaturedProjects.astro';
-import SocialLinks from '../components/landing/SocialLinks.astro';
+import Base from '../layouts/Base.astro';
 ---
 
-<LandingLayout title="Home">
-  <Hero />
-  <FeaturedProjects />
-  <SocialLinks />
-</LandingLayout>
+<Base title="Hunter Dyer">
+  <h1>Hey, I'm Hunter.</h1>
+  <p>Welcome to my corner of the internet. I write about things I find interesting and keep my resume here.</p>
+  <p>Check out the <a href="/blog">blog</a> or my <a href="/resume">resume</a>.</p>
+</Base>

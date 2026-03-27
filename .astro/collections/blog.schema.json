@@ -10,7 +10,7 @@
         "description": {
           "type": "string"
         },
-        "pubDate": {
+        "date": {
           "anyOf": [
             {
               "type": "string",
@@ -25,58 +25,9 @@
               "format": "unix-time"
             }
           ]
-        },
-        "updatedDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "category": {
-          "type": "string",
-          "enum": [
-            "professional",
-            "personal",
-            "random"
-          ]
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": []
-        },
-        "heroImage": {
-          "type": "string"
-        },
-        "githubRepo": {
-          "type": "string",
-          "format": "uri"
-        },
-        "series": {
-          "type": "string"
-        },
-        "seriesOrder": {
-          "type": "number"
         },
         "draft": {
-          "type": "boolean",
-          "default": false
-        },
-        "unlisted": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "$schema": {
           "type": "string"
@@ -85,8 +36,7 @@
       "required": [
         "title",
         "description",
-        "pubDate",
-        "category"
+        "date"
       ],
       "additionalProperties": false
     }
