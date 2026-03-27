@@ -3,6 +3,111 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Resume - Hunter Dyer">
-  <h1>Resume</h1>
-  <p>TODO: Add your resume content here. You can write it directly in HTML/Astro, or paste in your details.</p>
+  <h1>Hunter A. Dyer</h1>
+  <p>
+    <a href="mailto:hunter.a.dyer@gmail.com">hunter.a.dyer@gmail.com</a> |
+    217-649-5212 |
+    HunterADyer.com |
+    Greater Seattle Area
+  </p>
+
+  <hr />
+
+  <div class="resume-section">
+    <h2>Experience</h2>
+
+    <div class="resume-entry">
+      <h3>Security Researcher II — Microsoft</h3>
+      <div class="subtitle">Redmond, WA</div>
+      <div class="dates">August 2025 – Present</div>
+      <ul>
+        <li>Conducted reverse engineering of zero-day vulnerabilities to identify root causes and exploitation primitives.</li>
+        <li>Developed minimized proof-of-concept exploits to validate exploitability and assess real-world impact.</li>
+        <li>Authored customer-facing technical vulnerability analyses and detection guidance, including IOCs and YARA signatures.</li>
+        <li>Represented the security organization during incident response, partnering with engineering to drive effective mitigation implementation.</li>
+        <li>Bridged security research and engineering teams to translate findings into actionable remediation strategies.</li>
+        <li>Conducted root cause and exploitability assessment during vulnerability triage to determine real-world impact and mitigation urgency.</li>
+      </ul>
+    </div>
+
+    <div class="resume-entry">
+      <h3>Cybersecurity R&D — Sandia National Laboratories</h3>
+      <div class="subtitle">Member of Technical Staff — Shoreview, MN</div>
+      <div class="dates">July 2022 – August 2025</div>
+      <ul>
+        <li>Conducted low-level system binary analysis, reverse-engineering, and vulnerability research through the use of user-mode and kernel-mode debuggers, disassemblers, and decompilers.</li>
+        <li>Gained a deep understanding of Microsoft's Virtualization-Based Security (VBS) protections and features to ensure customer security requirements were met.</li>
+        <li>Led vulnerability assessments of desktop, backend, and web applications which resulted in identifying multiple vulnerabilities including an authentication bypass, XSS vectors, information leaks, security misconfigurations, and other OWASP Top 10 vulnerabilities.</li>
+        <li>Led threat modeling and risk analysis processes to guide vulnerability assessments and recommendations of vulnerability remediation options.</li>
+        <li>Developed and maintained research and analysis tooling.</li>
+        <li>Guided teams' technical efforts and research directions through multiple software assessments while continuing to make impactful technical contributions.</li>
+        <li>Routinely communicated team progress and results to stakeholders through oral and written communications at varying levels of technical detail.</li>
+      </ul>
+    </div>
+
+    <div class="resume-entry">
+      <h3>Android Security Researcher — UIUC & GWU</h3>
+      <div class="subtitle">University of Illinois at Urbana-Champaign & The George Washington University — Urbana, IL / Washington, D.C.</div>
+      <div class="dates">2020 – 2022</div>
+      <ul>
+        <li>Conducted large-scale empirical analysis of Android applications across official and unofficial distribution platforms to measure prevalence of tampering and repackaging.</li>
+        <li>Performed reverse engineering, static and dynamic analysis of Android COVID-19 contact tracing applications to identify privacy and security weaknesses.</li>
+        <li>Designed tooling to automate dataset generation and vulnerability analysis workflows.</li>
+        <li>Evaluated security controls against NIST, FedRAMP, and C5 frameworks.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Technical Skills</h2>
+
+    <p><strong>Languages:</strong> Python, C, C++, x86/x64 Assembly, Bash</p>
+    <p><strong>Reverse Engineering & Debugging:</strong> IDA Pro, Ghidra, Binary Ninja, WinDbg (user-mode & kernel-mode), GDB, JADX, Sysinternals Suite</p>
+    <p><strong>Binary & Systems Analysis:</strong> Static analysis, dynamic analysis, root cause analysis, exploitability assessment, crash triage, memory corruption analysis, patch diffing</p>
+    <p><strong>Security Tooling:</strong> YARA rule development, PoC development, Burp Suite Pro, Wireshark, Software Composition Analysis (SCA) tools</p>
+    <p><strong>Platforms:</strong> Windows, Linux, Android</p>
+    <p><strong>Domains:</strong> Vulnerability research, reverse engineering, program analysis, application security, threat modeling, risk assessment, web application security</p>
+  </div>
+
+  <div class="resume-section">
+    <h2>Education</h2>
+
+    <div class="resume-entry">
+      <h3>University of Illinois at Urbana-Champaign</h3>
+      <div class="dates">M.C.S., Computer Science — 2021</div>
+    </div>
+
+    <div class="resume-entry">
+      <h3>University of Illinois at Urbana-Champaign</h3>
+      <div class="dates">B.S., Computer Science — High Honors — 2021</div>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Publications</h2>
+
+    <div class="resume-entry">
+      <p><strong>Awareness, Intention, (In)Action: Individuals' Reactions to Data Breaches.</strong><br />
+      ACM Transactions on Computer-Human Interaction (TOCHI), 2023.<br />
+      Peter Mayer, Yixin Zou, Byron M. Lowens, Hunter A. Dyer, Khue Le, Florian Schaub, Adam J. Aviv.</p>
+    </div>
+
+    <div class="resume-entry">
+      <p><strong>Enabling User-Centered Privacy Controls for Mobile Applications: COVID-19 Perspective.</strong><br />
+      ACM Transactions on Internet Technology (TOIT), 2021.<br />
+      Tanusree Sharma, Hunter A. Dyer, Masooda Bashir.</p>
+    </div>
+
+    <div class="resume-entry">
+      <p><strong>Mapping Risk Assessment Strategy for COVID-19 Mobile Apps' Vulnerabilities.</strong><br />
+      Lecture Notes in Networks and Systems (LNNS), 2021.<br />
+      Tanusree Sharma, Hunter A. Dyer, Roy H. Campbell, Masooda Bashir.</p>
+    </div>
+
+    <div class="resume-entry">
+      <p><strong>"Someone Definitely Used 0000": Strategies, Performance, and User Perception of Novice Smartphone-Unlock PIN-Guessers.</strong><br />
+      Proceedings of the European Symposium on Usable Security (EuroUSEC), 2023.<br />
+      Daniel V. Bailey, Collins W. Munyendo, Hunter A. Dyer, Miles Grant, Philipp Markert, Adam J. Aviv.</p>
+    </div>
+  </div>
 </Base>
