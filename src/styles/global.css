@@ -15,17 +15,18 @@ body {
 }
 
 a {
-  color: #2563eb;
+  color: #dc2626;
 }
 
 a:hover {
+  color: #991b1b;
   text-decoration: none;
 }
 
 nav {
   margin-bottom: 3rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 2px solid #dc2626;
   display: flex;
   gap: 1.5rem;
   align-items: baseline;
@@ -37,12 +38,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #222;
+  color: #dc2626;
 }
 
 nav a.site-title {
   font-weight: 700;
-  color: #222;
+  color: #dc2626;
   margin-right: auto;
 }
 
@@ -107,7 +108,7 @@ pre code {
 }
 
 blockquote {
-  border-left: 3px solid #d1d5db;
+  border-left: 3px solid #dc2626;
   padding-left: 1rem;
   color: #555;
   margin-bottom: 1rem;
@@ -115,7 +116,7 @@ blockquote {
 
 hr {
   border: none;
-  border-top: 1px solid #e5e5e5;
+  border-top: 2px solid #dc2626;
   margin: 2rem 0;
 }
 
@@ -155,6 +156,11 @@ th {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
+  color: #222;
+}
+
+.post-list a:hover {
+  color: #dc2626;
 }
 
 .post-list .date {
